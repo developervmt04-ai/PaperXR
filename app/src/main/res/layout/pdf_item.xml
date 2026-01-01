@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/pdfThumbnail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+     />
+
+    <TextView
+        android:layout_toRightOf="@id/pdfThumbnail"
+        android:id="@+id/pdfTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="PDF Name"
+        android:textSize="16sp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp" />
+    <TextView
+        android:layout_toRightOf="@id/pdfThumbnail"
+        android:layout_below="@id/pdfTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:id="@+id/date"/>
+    <TextView
+        android:layout_below="@id/pdfTitle"
+        android:layout_toRightOf="@id/date"
+        android:text="size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/size"/>
+
+</RelativeLayout>

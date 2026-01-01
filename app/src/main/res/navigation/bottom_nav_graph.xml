@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_menu"
+    app:startDestination="@id/pdfListsFragment">
+
+    <fragment
+        android:id="@+id/arFragment"
+        android:name="com.example.paperxr.ui.ar.ArFragment"
+        android:label="fragment_ar"
+        tools:layout="@layout/fragment_ar" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.paperxr.ui.favourites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/pdfListsFragment"
+        android:name="com.example.paperxr.ui.pdflist.PdfListsFragment"
+        android:label="fragment_pdf_lists"
+        tools:layout="@layout/fragment_pdf_lists" />
+</navigation>
