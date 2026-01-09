@@ -18,6 +18,8 @@ import com.example.paperxr.databinding.FragmentPdfListsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import android.content.pm.PackageManager
+import androidx.navigation.fragment.findNavController
+import com.example.paperxr.R
 
 @AndroidEntryPoint
 class PdfListsFragment : Fragment() {
@@ -39,6 +41,12 @@ class PdfListsFragment : Fragment() {
         binding.pdfListRV.layoutManager = LinearLayoutManager(requireContext())
         binding.pdfListRV.adapter = adapter
         viewModel.loadAllPdfs()
+
+        adapter.onClick = { pdfData ->
+            val pdfUri = pdfData.uri
+            val bundle = Bundle().apply { putString("pdfUri", pdfUri.toString()) }
+            findNavController().navigate(R.id.action_to_viewerFragment, bundle)
+        }
 
 
         lifecycleScope.launchWhenStarted {

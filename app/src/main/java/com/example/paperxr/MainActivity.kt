@@ -2,6 +2,7 @@ package com.example.paperxr
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import com.example.paperxr.databinding.ActivityMainBinding
 import com.example.paperxr.permission.Permissions
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         permissions= Permissions(this)
         permissions.checkAndRequestMultiPerm()
 

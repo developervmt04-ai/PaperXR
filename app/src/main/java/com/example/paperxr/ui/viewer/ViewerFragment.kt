@@ -34,6 +34,8 @@ class ViewerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         val path=requireArguments().getString("pdfPath")!!
         openPdf(File(path))
 

@@ -30,6 +30,12 @@ class PdfListAdapter(): RecyclerView.Adapter<PdfListAdapter.ViewHolder>() {
         val dateInMillis = pdfs.dateAdded?.times(1000) ?: 0L
         val date = Date(dateInMillis)
         holder.binding.date.text = dateFormatter.format(date)
+        holder.binding.root.setOnClickListener {
+            onClick?.invoke(pdfs)
+
+
+
+        }
 
 
 
@@ -57,6 +63,7 @@ class PdfListAdapter(): RecyclerView.Adapter<PdfListAdapter.ViewHolder>() {
 
     }
     val differ= AsyncListDiffer(this,diffCallBack)
+    var onClick:((PdfData)-> Unit)?=null
 
     inner class ViewHolder(val binding: PdfItemBinding): RecyclerView.ViewHolder(binding.root){
 
